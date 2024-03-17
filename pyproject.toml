@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "hexly"
+version = "0.0.1"
+description = "Hex data viewer for Jupyter notebooks"
+authors = ["Shad Sharma <shadanan@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.2"
+ipykernel = "^6.29.3"
+jupyterlab = "^4.1.4"
+pandas = "^2.2.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
