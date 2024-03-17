@@ -1,6 +1,16 @@
 import hexly as hl
 
 
+def test_hv_empty_data_succeeds():
+    hv = hl.HexView(b"")
+    hv._repr_html_()
+
+
+def test_hv_one_bytes_succeeds():
+    hv = hl.HexView(b"\x00")
+    hv._repr_html_()
+
+
 def test_hv_contains_expected_row_headers():
     hv = hl.HexView(bytes(range(0x100)))
     actual = hv._repr_html_()
@@ -56,18 +66,32 @@ def test_hv_ascii_encoding_contains_161_unprintable_characters():
     assert actual.count('class="up"') == expected
 
 
-def test_hv_cp437_encoding_contains_cp437_name():
-    hv = hl.HexView(bytes(range(0x100)), encoding=hl.CP437)
+def test_hv_ibm437_encoding_contains_ibm437_name():
+    hv = hl.HexView(bytes(range(0x100)), encoding=hl.IBM437)
     actual = hv._repr_html_()
-    expected = "CP437"
+    expected = "IBM437"
     assert expected in actual
 
 
-def test_hv_cp437_encoding_contains_2_unprintable_characters():
-    hv = hl.HexView(bytes(range(0x100)), encoding=hl.CP437)
+def test_hv_ibm437_encoding_contains_2_unprintable_characters():
+    hv = hl.HexView(bytes(range(0x100)), encoding=hl.IBM437)
     actual = hv._repr_html_()
     expected = 2
     assert actual.count('class="up"') == expected
+
+
+def test_hv_ibm850_encoding_contains_ibm850_name():
+    hv = hl.HexView(bytes(range(0x100)), encoding=hl.IBM850)
+    actual = hv._repr_html_()
+    expected = "IBM850"
+    assert expected in actual
+
+
+def test_hv_windows1252_encoding_contains_windows1252_name():
+    hv = hl.HexView(bytes(range(0x100)), encoding=hl.WINDOWS_1252)
+    actual = hv._repr_html_()
+    expected = "Windows-1252"
+    assert expected in actual
 
 
 def test_hv_hexly_encoding_contains_hexly_name():
