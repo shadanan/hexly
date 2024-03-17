@@ -1,0 +1,25 @@
+table.hexly {
+  font-family: Menlo, Monaco, "Courier New", Courier, monospace;
+}
+
+table.hexly th.decoded {
+  margin-left: 1em;
+}
+
+table.hexly th {
+  font-weight: bold;
+}
+
+table.hexly th,
+table.hexly td {
+  margin: 0;
+  padding: 0.25em;
+}
+
+table.hexly .up {
+  opacity: 0.5;
+}
+
+table.hexly .hl {
+  color: red;
+}
