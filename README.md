@@ -9,6 +9,6 @@ import hexly as hl
 hl.HexView(bytes(range(256)))
 ```
 
-![usage](usage.png)
+![usage](https://raw.githubusercontent.com/shadanan/hexly/main/usage.png)
 
-For more usage, checkout the [usage notebook](usage.ipynb).
+For more usage, checkout the [usage notebook](https://github.com/shadanan/hexly/blob/main/usage.ipynb).
