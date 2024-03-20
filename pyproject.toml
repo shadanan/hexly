@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "hexly"
-version = "0.0.3"
+version = "0.0.4"
 description = "A hex viewer for Jupyter notebooks"
 authors = ["Shad Sharma <shadanan@gmail.com>"]
 readme = "README.md"
